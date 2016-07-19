@@ -58,7 +58,7 @@
   <!--script src="https://cdn.socket.io/socket.io-1.4.5.js"></script-->
 
   <!--downloaded js files-->
-    <!--script src="jquery/jquery-1.12.3.min.js"></script-->
+  <!--script src="jquery/jquery-1.12.3.min.js"></script-->
   <script src="socket.io/socket.io.js"></script>
   <script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -68,7 +68,39 @@
 
   $('#chat-form').submit(function(e){
     e.preventDefault();
-    socket.emit('chat message', [$('#m1').val(), $('#m').val()]);
+    var message = $('#m').val();
+    var httpLink = message.indexOf("http");
+    var httpsLink = message.indexOf("www");
+    var fileLink = message.indexOf("file");
+
+    if(httpLink!=-1){
+      var tempMessage = message.substring(httpLink, message.length);
+      var tempArray = tempMessage.split(" ");
+      var linkMessage = tempArray[0];
+      var linkMessageLength = linkMessage.length;
+      var createdLinkMessage = message.substring(0, httpLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpLink+linkMessageLength),message.length);
+      socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
+    }
+    else if (httpsLink!=-1) {
+      var tempMessage = message.substring(httpsLink, message.length);
+      var tempArray = tempMessage.split(" ");
+      var linkMessage = tempArray[0];
+      var linkMessageLength = linkMessage.length;
+      var createdLinkMessage = message.substring(0, httpsLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpsLink+linkMessageLength),message.length);
+      socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
+    }
+    else if (fileLink!=-1) {
+      var tempMessage = message.substring(fileLink, message.length);
+      var tempArray = tempMessage.split(" ");
+      var linkMessage = tempArray[0];
+      var linkMessageLength = linkMessage.length;
+      var createdLinkMessage = message.substring(0, fileLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((fileLink+linkMessageLength),message.length);
+      socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
+    }
+    else{
+      socket.emit('chat message', [$('#m1').val(), $('#m').val()]);
+    }
+
     $('#m').val('');
     isClicked = true;
     return false;
@@ -134,38 +166,7 @@
   });
 
   socket.on('chat message', function(msg){
-    var message = msg[1];
-    var httpLink = message.indexOf("http");
-    var httpsLink = message.indexOf("www");
-    var fileLink = message.indexOf("file");
-    if(httpLink!=-1)
-    {
-      var tempMessage = message.substring(httpLink, message.length);
-      var tempArray = tempMessage.split(" ");
-      var linkMessage = tempArray[0];
-      var linkMessageLength = linkMessage.length;
-      $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + message.substring(0, httpLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpLink+linkMessageLength),message.length) + '</p>');
-      $('#link_message').css('text-decoration', 'none');
-    }
-    else if (httpsLink!=-1) {
-      var tempMessage = message.substring(httpsLink, message.length);
-      var tempArray = tempMessage.split(" ");
-      var linkMessage = tempArray[0];
-      var linkMessageLength = linkMessage.length;
-      $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + message.substring(0, httpsLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpsLink+linkMessageLength),message.length) + '</p>');
-      $('#link_message').css('text-decoration', 'none');
-    }
-    else if (fileLink!=-1) {
-      var tempMessage = message.substring(fileLink, message.length);
-      var tempArray = tempMessage.split(" ");
-      var linkMessage = tempArray[0];
-      var linkMessageLength = linkMessage.length;
-      $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + message.substring(0, fileLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((fileLink+linkMessageLength),message.length) + '</p>');
-      $('#link_message').css('text-decoration', 'none');
-    }
-    else{
-      $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + msg[1]+ '</p>');
-    }
+    $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + msg[1]+ '</p>');
     var elem = document.getElementById('messages');
     elem.scrollTop = elem.scrollHeight;
   });
