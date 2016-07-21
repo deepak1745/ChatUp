@@ -194,11 +194,11 @@
 
 
 <!--online js files-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script> -->
 <!--script src="https://cdn.socket.io/socket.io-1.4.5.js"></script-->
 
 <!--downloaded js files-->
-<!--script src="jquery/jquery-1.12.3.min.js"></script-->
+<script src="jquery/jquery-1.12.3.min.js"></script>
 <script src="socket.io/socket.io.js"></script>
 <script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -211,7 +211,6 @@ $('#chat-form').submit(function(e){
   var message = $('#m').val();
   var httpLink = message.indexOf("http");
   var httpsLink = message.indexOf("www");
-  var fileLink = message.indexOf("file");
 
   if(httpLink!=-1){
     var tempMessage = message.substring(httpLink, message.length);
@@ -226,15 +225,7 @@ $('#chat-form').submit(function(e){
     var tempArray = tempMessage.split(" ");
     var linkMessage = tempArray[0];
     var linkMessageLength = linkMessage.length;
-    var createdLinkMessage = message.substring(0, httpsLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpsLink+linkMessageLength),message.length);
-    socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
-  }
-  else if (fileLink!=-1) {
-    var tempMessage = message.substring(fileLink, message.length);
-    var tempArray = tempMessage.split(" ");
-    var linkMessage = tempArray[0];
-    var linkMessageLength = linkMessage.length;
-    var createdLinkMessage = message.substring(0, fileLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((fileLink+linkMessageLength),message.length);
+    var createdLinkMessage = message.substring(0, httpsLink) + '<a  id ="link_message" target="_blank" href=http://' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpsLink+linkMessageLength),message.length);
     socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
   }
   else{
@@ -252,7 +243,7 @@ $('#name-form').submit(function(e){
   $('#chat-form').css('display', 'block');
   $('#m').focus();
 
-  //  socket.emit("image", 'C:/Users/krrish/Desktop/backgrounds/landscape.jpg');
+   //socket.emit("image", 'C:/Users/krrish/Desktop/backgrounds/landscape.jpg');
   socket.emit('online', $('#m1').val());
   $.get('/getChatHistory', function(chatHistory){
     chatHistory.forEach(function(message){
@@ -264,7 +255,7 @@ $('#name-form').submit(function(e){
     if (info.image) {
       var img = new Image();
       img.src = 'data:image/jpeg;base64,' + info.buffer;
-      img.style = 'width:50%; margin-top:1%; margin-bottom:1%; margin-left:1.5%;';
+      img.style = 'width:20%; margin-top:1%; margin-bottom:1%; margin-left:1.5%; heigt:30%;';
       $('#messages').append(img);
     }
   });
