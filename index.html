@@ -39,6 +39,101 @@
   a:hover{
     text-decoration: none;
   }
+  #smiley{
+    width:2%;
+    height: 10%;
+    margin-left: 2%;
+  }
+  #smiley:hover{
+    cursor: pointer;
+  }
+  #keyboard{
+    width: 2.5%;
+    height: 70%;
+    margin-left: 2%;
+    background-color: yellow!important;
+    display: none;
+  }
+  #keyboard:hover{
+    cursor: pointer;
+  }
+  #smiley1, #smiley2, #smiley3, #smiley4, #smiley5, #smiley6, #smiley7, #smiley8, #smiley9, #smiley10, #smiley11, #smiley12, #smiley13, #smiley14, #smiley15{
+    width: 2.5%;
+    height: 10%;
+  }
+  #smiley16, #smiley17, #smiley18, #smiley19, #smiley20, #smiley21, #smiley22, #smiley23, #smiley24, #smiley25, #smiley26, #smiley27, #smiley28, #smiley29, #smiley30, #smiley31, #smiley32{
+    width: 2.5%;
+    height: 10%;
+  }
+  #smileys_list{
+    list-style-type: none;
+    padding-left: 1%;
+  }
+  #smileys_list li{
+    display: inline;
+    margin: .5%;
+  }
+  #smileys_list li:hover{
+    cursor: pointer;
+  }
+  #smileys_list li:first-child{
+    margin-left: 0;
+  }
+  #smiley_div{
+    background-color: white!important;
+    padding-top: .7%;
+    padding-bottom: .1%;
+    margin-top: .5%;
+    display: none;
+  }
+
+  /*media queries*/
+
+  @media only screen
+  and (max-width: 736px) {
+    #smiley{
+      width:7%;
+      height: 40%;
+      margin-left: 2%;
+    }
+    #keyboard{
+      width: 7%;
+      height: 90%;
+      margin-left: 2%;
+      background-color: yellow!important;
+      display: none;
+    }
+    #smiley1, #smiley2, #smiley3, #smiley4, #smiley5, #smiley6, #smiley7, #smiley8, #smiley9, #smiley10, #smiley11, #smiley12, #smiley13, #smiley14, #smiley15{
+      width: 7%;
+      height: 30%;
+    }
+    #smiley16, #smiley17, #smiley18, #smiley19, #smiley20, #smiley21, #smiley22, #smiley23, #smiley24, #smiley25, #smiley26, #smiley27, #smiley28, #smiley29, #smiley30, #smiley31, #smiley32{
+      width: 7%;
+      height: 30%;
+    }
+    #smileys_list{
+      list-style-type: none;
+      padding-left: 2%;
+    }
+    #messages{
+      max-height: 420px;
+      /*max-height: 90%;*/
+    }
+  }
+
+  @media only screen and (max-width: 736px) and (orientation: landscape) {
+    #messages{
+      max-height: 200px;
+      /*max-height: 90%;*/
+    }
+}
+
+  /*@media only screen
+  and (min-width: 736px)
+  and (max-width: 1200px){
+
+  }*/
+
   </style>
 </head>
 <body>
@@ -50,130 +145,460 @@
     <form  id='chat-form' class="navbar-form navbar-left navbar-fixed-bottom">
       <div id="messages"><h3 style="text-align:center"> ChatUp </h3> </div>
       <input id="m" autocomplete="off" placeholder="Type your text" autofocus="autofocus"/><button class="btn btn-success" id='chat-button' disabled="disabled"><img src = "icons/send.svg"></button>
+      <img src = "smileys/smiley.svg" id ="smiley">
+      <img src = "smileys/keyboard.png" id ="keyboard">
+      <div id="smiley_div">
+        <ul id = "smileys_list">
+          <li><img src = "smileys/smiley1.jpg" id ="smiley1" onclick="addSmiley1();"></li>
+          <li><img src = "smileys/smiley2.jpg" id ="smiley2" onclick="addSmiley2();"></li>
+          <li><img src = "smileys/smiley3.jpg" id ="smiley3" onclick="addSmiley3();"></li>
+          <li><img src = "smileys/smiley4.png" id ="smiley4" onclick="addSmiley4();"></li>
+          <li><img src = "smileys/smiley5.png" id ="smiley5" onclick="addSmiley5();"></li>
+          <li><img src = "smileys/smiley6.png" id ="smiley6" onclick="addSmiley6();"></li>
+          <li><img src = "smileys/smiley7.png" id ="smiley7" onclick="addSmiley7();"></li>
+          <li><img src = "smileys/smiley8.jpg" id ="smiley8" onclick="addSmiley8();"></li>
+          <li><img src = "smileys/smiley9.png" id ="smiley9" onclick="addSmiley9();"></li>
+          <li><img src = "smileys/smiley10.jpg" id ="smiley10" onclick="addSmiley10();"></li>
+          <li><img src = "smileys/smiley11.jpg" id ="smiley11" onclick="addSmiley11();"></li>
+          <li><img src = "smileys/smiley12.png" id ="smiley12" onclick="addSmiley12();"></li>
+          <li><img src = "smileys/smiley13.jpg" id ="smiley13" onclick="addSmiley13();"></li>
+          <li><img src = "smileys/smiley14.jpg" id ="smiley14" onclick="addSmiley14();"></li>
+          <li><img src = "smileys/smiley15.jpg" id ="smiley15" onclick="addSmiley15();"></li>
+          <li><img src = "smileys/smiley16.jpg" id ="smiley16" onclick="addSmiley16();"></li>
+          <li><img src = "smileys/smiley17.jpg" id ="smiley17" onclick="addSmiley17();"></li>
+          <li><img src = "smileys/smiley18.jpg" id ="smiley18" onclick="addSmiley18();"></li>
+          <li><img src = "smileys/smiley19.jpg" id ="smiley19" onclick="addSmiley19();"></li>
+          <li><img src = "smileys/smiley20.png" id ="smiley20" onclick="addSmiley20();"></li>
+          <li><img src = "smileys/smiley21.jpg" id ="smiley21" onclick="addSmiley21();"></li>
+          <li><img src = "smileys/smiley22.png" id ="smiley22" onclick="addSmiley22();"></li>
+          <li><img src = "smileys/smiley23.png" id ="smiley23" onclick="addSmiley23();"></li>
+          <li><img src = "smileys/smiley24.png" id ="smiley24" onclick="addSmiley24();"></li>
+          <li><img src = "smileys/smiley25.png" id ="smiley25" onclick="addSmiley25();"></li>
+          <li><img src = "smileys/smiley26.jpg" id ="smiley26" onclick="addSmiley26();"></li>
+          <li><img src = "smileys/smiley27.jpg" id ="smiley27" onclick="addSmiley27();"></li>
+          <li><img src = "smileys/smiley28.png" id ="smiley28" onclick="addSmiley28();"></li>
+          <li><img src = "smileys/smiley29.jpg" id ="smiley29" onclick="addSmiley29();"></li>
+          <li><img src = "smileys/smiley30.gif" id ="smiley30" onclick="addSmiley30();"></li>
+          <li><img src = "smileys/smiley31.png" id ="smiley31" onclick="addSmiley31();"></li>
+          <li><img src = "smileys/smiley32.png" id ="smiley32" onclick="addSmiley32();"></li>
+        </ul>
+      </div>
     </form>
   </div>
+  <div>
+    <!-- <form method="post" enctype="multipart/form-data" action="/upload">
+    <input type="file" name="file" id="file_input">
+    <input type="submit" value="Submit">
+  </form> -->
+</div>
 
-  <!--online js files-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <!--script src="https://cdn.socket.io/socket.io-1.4.5.js"></script-->
 
-  <!--downloaded js files-->
-  <!--script src="jquery/jquery-1.12.3.min.js"></script-->
-  <script src="socket.io/socket.io.js"></script>
-  <script src="bootstrap/js/bootstrap.min.js"></script>
+<!--online js files-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<!--script src="https://cdn.socket.io/socket.io-1.4.5.js"></script-->
 
-  <script>
-  var socket = io();
-  var isClicked = false;
+<!--downloaded js files-->
+<!--script src="jquery/jquery-1.12.3.min.js"></script-->
+<script src="socket.io/socket.io.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 
-  $('#chat-form').submit(function(e){
-    e.preventDefault();
-    var message = $('#m').val();
-    var httpLink = message.indexOf("http");
-    var httpsLink = message.indexOf("www");
-    var fileLink = message.indexOf("file");
+<script>
+var socket = io();
+var isClicked = false;
 
-    if(httpLink!=-1){
-      var tempMessage = message.substring(httpLink, message.length);
-      var tempArray = tempMessage.split(" ");
-      var linkMessage = tempArray[0];
-      var linkMessageLength = linkMessage.length;
-      var createdLinkMessage = message.substring(0, httpLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpLink+linkMessageLength),message.length);
-      socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
-    }
-    else if (httpsLink!=-1) {
-      var tempMessage = message.substring(httpsLink, message.length);
-      var tempArray = tempMessage.split(" ");
-      var linkMessage = tempArray[0];
-      var linkMessageLength = linkMessage.length;
-      var createdLinkMessage = message.substring(0, httpsLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpsLink+linkMessageLength),message.length);
-      socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
-    }
-    else if (fileLink!=-1) {
-      var tempMessage = message.substring(fileLink, message.length);
-      var tempArray = tempMessage.split(" ");
-      var linkMessage = tempArray[0];
-      var linkMessageLength = linkMessage.length;
-      var createdLinkMessage = message.substring(0, fileLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((fileLink+linkMessageLength),message.length);
-      socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
-    }
-    else{
-      socket.emit('chat message', [$('#m1').val(), $('#m').val()]);
-    }
+$('#chat-form').submit(function(e){
+  e.preventDefault();
+  var message = $('#m').val();
+  var httpLink = message.indexOf("http");
+  var httpsLink = message.indexOf("www");
+  var fileLink = message.indexOf("file");
 
-    $('#m').val('');
-    isClicked = true;
-    return false;
-  });
-
-  $('#name-form').submit(function(e){
-    e.preventDefault();
-    $('#name-form').css('display', 'none');
-    $('#chat-form').css('display', 'block');
-    $('#m').focus();
-
-    socket.emit('online', $('#m1').val());
-    $.get('/getChatHistory', function(chatHistory){
-      chatHistory.forEach(function(message){
-        $('#messages').append('<p><b>' + message.name + '</b>' + ': ' + message.message+ '</p>');
-      });
-      $('#messages').append('<p>--------- Unread Messages ----------<p>');
-    });
-  });
-
-  $('#m1').keyup(function(){
-    if($('#m1').val()!='') {$('#start-button').removeAttr('disabled');}
-    else {$('#start-button').attr('disabled', 'disabled');}
-  });
-
-  var searchTimeout;
-  var flag = false;
-
-  $('#m').keyup(function(){
-    if($('#m').val().length==1 || flag==true){
-      isClicked = false;
-      socket.emit('typing message', $('#m1').val());
-      if (searchTimeout != undefined) clearTimeout(searchTimeout);
-      searchTimeout = setTimeout(callServerScript, 1000);
-    }
-
-    flag=false;
-
-    if($('#m').val()!='') {$('#chat-button').removeAttr('disabled');}
-    else {$('#chat-button').attr('disabled', 'disabled');}
-  });
-
-  socket.on('typing message', function(msg){
-    $('#messages').append('<p><b>' + msg +'</b></p>');
-  });
-
-  function callServerScript() {
-    flag=true;
-    if(!isClicked){
-      socket.emit('delete lastmessage',   $('#messages p:last-child'));
-    }
-    else{
-      socket.emit('delete secondlastmessage', $('#messages p:nth-last-child(2)'));
-    }
+  if(httpLink!=-1){
+    var tempMessage = message.substring(httpLink, message.length);
+    var tempArray = tempMessage.split(" ");
+    var linkMessage = tempArray[0];
+    var linkMessageLength = linkMessage.length;
+    var createdLinkMessage = message.substring(0, httpLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpLink+linkMessageLength),message.length);
+    socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
+  }
+  else if (httpsLink!=-1) {
+    var tempMessage = message.substring(httpsLink, message.length);
+    var tempArray = tempMessage.split(" ");
+    var linkMessage = tempArray[0];
+    var linkMessageLength = linkMessage.length;
+    var createdLinkMessage = message.substring(0, httpsLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((httpsLink+linkMessageLength),message.length);
+    socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
+  }
+  else if (fileLink!=-1) {
+    var tempMessage = message.substring(fileLink, message.length);
+    var tempArray = tempMessage.split(" ");
+    var linkMessage = tempArray[0];
+    var linkMessageLength = linkMessage.length;
+    var createdLinkMessage = message.substring(0, fileLink) + '<a  id ="link_message" target="_blank" href=' + linkMessage + '>' + linkMessage + '</a>' + message.substring((fileLink+linkMessageLength),message.length);
+    socket.emit('chat message', [$('#m1').val(), createdLinkMessage]);
+  }
+  else{
+    socket.emit('chat message', [$('#m1').val(), $('#m').val()]);
   }
 
-  socket.on('delete lastmessage', function(msg){
-    $('#messages p:last-child').empty();
-  });
+  $('#m').val('');
+  isClicked = true;
+  return false;
+});
 
-  socket.on('delete secondlastmessage', function(msg){
-    $('#messages p:nth-last-child(2)').empty();
-  });
+$('#name-form').submit(function(e){
+  e.preventDefault();
+  $('#name-form').css('display', 'none');
+  $('#chat-form').css('display', 'block');
+  $('#m').focus();
 
-  socket.on('chat message', function(msg){
-    $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + msg[1]+ '</p>');
-    var elem = document.getElementById('messages');
-    elem.scrollTop = elem.scrollHeight;
+  //  socket.emit("image", 'C:/Users/krrish/Desktop/backgrounds/landscape.jpg');
+  socket.emit('online', $('#m1').val());
+  $.get('/getChatHistory', function(chatHistory){
+    chatHistory.forEach(function(message){
+      $('#messages').append('<p><b>' + message.name + '</b>' + ': ' + message.message+ '</p>');
+    });
+    $('#messages').append('<p>--------- Unread Messages ----------<p>');
   });
+  socket.on("image", function(info) {
+    if (info.image) {
+      var img = new Image();
+      img.src = 'data:image/jpeg;base64,' + info.buffer;
+      img.style = 'width:50%; margin-top:1%; margin-bottom:1%; margin-left:1.5%;';
+      $('#messages').append(img);
+    }
+  });
+});
 
-  socket.on('online', function(msg){
-    $('#messages').append('<p><b>'+msg+'</b></p>');
-  });
-  </script>
+$('#m1').keyup(function(){
+  if($('#m1').val()!='') {$('#start-button').removeAttr('disabled');}
+  else {$('#start-button').attr('disabled', 'disabled');}
+});
+
+var searchTimeout;
+var flag = false;
+
+$('#m').keyup(function(){
+  if($('#m').val().length==1 || flag==true){
+    isClicked = false;
+    socket.emit('typing message', $('#m1').val());
+    if (searchTimeout != undefined) clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(callServerScript, 1000);
+  }
+
+  flag=false;
+
+  if($('#m').val()!='') {$('#chat-button').removeAttr('disabled');}
+  else {$('#chat-button').attr('disabled', 'disabled');}
+});
+
+$("#smiley").click(function(){
+  $('#smiley_div').slideDown();
+  $('#smiley').css('display','none');
+  $('#keyboard').css('display','inline');
+});
+
+$("#keyboard").click(function(){
+  $('#smiley_div').slideUp();
+  $('#smiley').css('display','inline');
+  $('#keyboard').css('display','none');
+});
+
+function addSmiley1(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley1" src = "smileys/smiley1.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley2(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley2" src = "smileys/smiley2.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley3(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley3" src = "smileys/smiley3.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley4(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley4" src = "smileys/smiley4.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley5(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley5" src = "smileys/smiley5.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley6(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley6" src = "smileys/smiley6.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley7(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley7" src = "smileys/smiley7.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley8(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley8" src = "smileys/smiley8.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley9(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley9" src = "smileys/smiley9.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley10(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley10" src = "smileys/smiley10.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley11(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley11" src = "smileys/smiley11.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley12(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley12" src = "smileys/smiley12.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley13(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley13" src = "smileys/smiley13.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley14(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley14" src = "smileys/smiley14.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley15(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley15" src = "smileys/smiley15.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley16(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley16" src = "smileys/smiley16.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley17(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley17" src = "smileys/smiley17.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley18(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley18" src = "smileys/smiley18.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley19(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley19" src = "smileys/smiley19.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley20(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley20" src = "smileys/smiley20.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley21(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley21" src = "smileys/smiley21.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley22(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley22" src = "smileys/smiley22.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley23(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley23" src = "smileys/smiley23.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley24(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley24" src = "smileys/smiley24.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley25(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley25" src = "smileys/smiley25.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley26(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley26" src = "smileys/smiley26.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley27(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley27" src = "smileys/smiley27.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley28(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley28" src = "smileys/smiley28.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley29(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley29" src = "smileys/smiley29.jpg"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley30(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley30" src = "smileys/smiley30.gif"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley31(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley31" src = "smileys/smiley31.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+function addSmiley32(){
+  var prevValue = $('#m').val();
+  var newValue = prevValue +  '<img id="smiley32" src = "smileys/smiley32.png"/>';
+  $('#m').val(newValue);
+  $('#chat-button').removeAttr('disabled');
+  $('#m').focus();
+}
+
+
+socket.on('typing message', function(msg){
+  $('#messages').append('<p><b>' + msg +'</b></p>');
+});
+
+function callServerScript() {
+  flag=true;
+  if(!isClicked){
+    socket.emit('delete lastmessage',   $('#messages p:last-child'));
+  }
+  else{
+    socket.emit('delete secondlastmessage', $('#messages p:nth-last-child(2)'));
+  }
+}
+
+//File file = new File('public/images/landscape.jpg');
+
+
+socket.on('delete lastmessage', function(msg){
+  $('#messages p:last-child').empty();
+});
+
+socket.on('delete secondlastmessage', function(msg){
+  $('#messages p:nth-last-child(2)').empty();
+});
+
+socket.on('chat message', function(msg){
+  $('#messages').append('<p><b>' + msg[0] + '</b>' + ': ' + msg[1]+ '</p>');
+  var elem = document.getElementById('messages');
+  elem.scrollTop = elem.scrollHeight;
+});
+
+socket.on('online', function(msg){
+  $('#messages').append('<p><b>'+msg+'</b></p>');
+});
+
+//var ctx = document.getElementById('canvas').getContext('2d');
+
+
+</script>
 </body>
 </html>

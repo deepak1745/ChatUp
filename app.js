@@ -1,12 +1,17 @@
 var express = require('express');
 var app = express();
 var http = require('http').Server(app);
+var path = require('path');
 var io = require('socket.io')(http);
 var fs= require('fs');
 
 app.use(express.static('public'));
 app.get('/', function(req, res){
   res.sendFile(__dirname + '/index.html');
+});
+
+app.post('/upload', function (req, res) {
+    console.log(req.files.displayImage.path);
 });
 
 app.get('/getChatHistory', function(req, res){
@@ -59,7 +64,24 @@ io.on('connection', function(socket){
 
     io.emit('delete secondlastmessage', name);
   });
+
+  socket.on('image', function(path){
+    fs.readFile(path, function(err, buf){
+    io.emit('image', { image: true, buffer: buf.toString('base64') });
+      console.log('image file is initialized');
+    });
+  });
 });
+
+// io.on('connection', function(socket){
+//   fs.readFile('public/images/landscape.jpg', function(err, buf){
+//     // it's possible to embed binary data
+//     // within arbitrarily-complex objects
+//
+//   socket.emit('image', { image: true, buffer: buf.toString('base64') });
+//     console.log('image file is initialized');
+//   });
+// });
 
 http.listen(80, function(){
   console.log('listening on *:80');
