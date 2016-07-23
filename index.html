@@ -119,6 +119,10 @@
       max-height: 420px;
       /*max-height: 90%;*/
     }
+    #messages p{
+      font-weight: 400;
+      font-size: 17.5px;
+    }
   }
 
   @media only screen and (max-width: 736px) and (orientation: landscape) {
@@ -126,7 +130,12 @@
       max-height: 200px;
       /*max-height: 90%;*/
     }
-}
+    #messages p{
+      padding-left: 20px;
+      font-weight: 400;
+      font-size: 20px;
+    }
+  }
 
   /*@media only screen
   and (min-width: 736px)
@@ -241,9 +250,14 @@ $('#name-form').submit(function(e){
   e.preventDefault();
   $('#name-form').css('display', 'none');
   $('#chat-form').css('display', 'block');
-  $('#m').focus();
+   var screenWidth = screen.width;
+   console.log(screenWidth);
+   if(screenWidth> 800){
+       $('#m').focus();
+   }
 
-   //socket.emit("image", 'C:/Users/krrish/Desktop/backgrounds/landscape.jpg');
+
+  //socket.emit("image", 'C:/Users/krrish/Desktop/backgrounds/landscape.jpg');
   socket.emit('online', $('#m1').val());
   $.get('/getChatHistory', function(chatHistory){
     chatHistory.forEach(function(message){
@@ -295,260 +309,261 @@ $("#keyboard").click(function(){
   $('#keyboard').css('display','none');
 });
 
+var input = $('#m');
 function addSmiley1(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley1" src = "smileys/smiley1.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley2(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley2" src = "smileys/smiley2.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley3(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley3" src = "smileys/smiley3.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley4(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley4" src = "smileys/smiley4.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley5(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley5" src = "smileys/smiley5.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley6(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley6" src = "smileys/smiley6.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley7(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley7" src = "smileys/smiley7.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley8(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley8" src = "smileys/smiley8.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley9(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley9" src = "smileys/smiley9.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley10(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley10" src = "smileys/smiley10.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley11(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley11" src = "smileys/smiley11.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley12(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley12" src = "smileys/smiley12.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley13(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley13" src = "smileys/smiley13.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley14(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley14" src = "smileys/smiley14.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley15(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley15" src = "smileys/smiley15.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley16(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley16" src = "smileys/smiley16.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley17(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley17" src = "smileys/smiley17.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley18(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley18" src = "smileys/smiley18.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley19(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley19" src = "smileys/smiley19.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley20(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley20" src = "smileys/smiley20.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley21(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley21" src = "smileys/smiley21.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley22(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley22" src = "smileys/smiley22.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley23(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley23" src = "smileys/smiley23.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley24(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley24" src = "smileys/smiley24.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley25(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley25" src = "smileys/smiley25.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley26(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley26" src = "smileys/smiley26.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley27(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley27" src = "smileys/smiley27.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley28(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley28" src = "smileys/smiley28.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley29(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley29" src = "smileys/smiley29.jpg"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley30(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley30" src = "smileys/smiley30.gif"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley31(){
-  var prevValue = $('#m').val();
+  var prevValue = input.val();
   var newValue = prevValue +  '<img id="smiley31" src = "smileys/smiley31.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 function addSmiley32(){
   var prevValue = $('#m').val();
   var newValue = prevValue +  '<img id="smiley32" src = "smileys/smiley32.png"/>';
-  $('#m').val(newValue);
+  input.val(newValue);
   $('#chat-button').removeAttr('disabled');
-  $('#m').focus();
+  input.focus();
 }
 
 
