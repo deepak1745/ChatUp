@@ -5,3 +5,7 @@
  are lazy enough to just go and tell him. So if you don't have a broadband connection at home or your mobile data pack is limited then
  just run it locally and unleash the joy of unlimited hours of chatting. Also there is no need of downloading any app which takes some
  storage space in your phone memory, just open our online public link in any browser and start chatting. Whatever you chat remains private and secure. You can add your own features as well.
+ 
+# License
+
+This project is licensed under the terms of the Apache-2.0 license
