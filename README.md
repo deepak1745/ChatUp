@@ -6,6 +6,6 @@
  just run it locally and unleash the joy of unlimited hours of chatting. Also there is no need of downloading any app which takes some
  storage space in your phone memory, just open our online public link in any browser and start chatting. Whatever you chat remains private and secure. You can add your own features as well.
  
-# License
+###License
 
 This project is licensed under the terms of the Apache-2.0 license
