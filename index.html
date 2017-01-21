@@ -160,7 +160,7 @@ This code is written by Deepak Kumar -->
 <body>
   <div class='container'>
     <form id='name-form' class="navbar-form navbar-left navbar-fixed-bottom">
-      <input id="m1" autocomplete="off" placeholder="Type your name" autofocus="autofocus"/><button class="btn btn-success" id='start-button' disabled='disabled'>Start chat</button>
+      <input id="m1" autocomplete="off" placeholder="Enter your name" autofocus="autofocus"/><button class="btn btn-success" id='start-button' disabled='disabled'>Start chat</button>
     </form>
 
     <form  id='chat-form' class="navbar-form navbar-left navbar-fixed-bottom">
@@ -226,6 +226,7 @@ This code is written by Deepak Kumar -->
 <script>
 var socket = io();
 var isClicked = false;
+alert('Please enter your name');
 
 $('#chat-form').submit(function(e){
   e.preventDefault();
